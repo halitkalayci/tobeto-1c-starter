@@ -42,13 +42,11 @@ function App() {
   return (
     <>
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
