@@ -13,12 +13,20 @@ function App() {
   }, [])
 
 
+  // es6
+  const fetchItems = async () => {
+    // axios.get("https://jsonplaceholder.typicode.com/posts")
+    //   .then((response) => { console.log(response) })
+    //   .catch((error) => { console.log(error) })
+    //   .finally(() => { console.log("async işlem bitti") });
 
-  const fetchItems = () => {
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => { console.log(response) })
-      .catch((error) => { console.log(error) })
-      .finally(() => { console.log("async işlem bitti") });
+    try {
+      let response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+
   }
 
   return (
