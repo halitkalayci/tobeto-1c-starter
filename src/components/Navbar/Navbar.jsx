@@ -18,3 +18,6 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// local storage
+// global state management (redux,context API)
