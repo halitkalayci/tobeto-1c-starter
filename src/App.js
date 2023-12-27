@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import { Button } from 'semantic-ui-react'
 import axios from "axios";
-
+import PostCard from './components/PostCard/PostCard';
 function App() {
   // Backend bağlantısı - http isteği
   // bağlantı sonucu gelen değeri ekranda göstermek
   // componentler arası veri iletişimi
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetchItems();
@@ -22,7 +22,7 @@ function App() {
 
     try {
       let response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      console.log(response);
+      setPosts(response.data)
     } catch (e) {
       console.log(e);
     }
@@ -30,8 +30,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Button>Click!</Button>
+    <div className="App" >
+      {/* Parent-Child */}
+      {posts.map((post) => <PostCard post={post} />)}
     </div>
   );
 }
