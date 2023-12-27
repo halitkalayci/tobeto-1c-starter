@@ -5,6 +5,7 @@ import PostService from './services/postService';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
 import Posts from './pages/Posts/Posts';
+import NotFound from './pages/NotFound/NotFound';
 function App() {
   // Backend bağlantısı - http isteği
   // bağlantı sonucu gelen değeri ekranda göstermek
@@ -41,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
