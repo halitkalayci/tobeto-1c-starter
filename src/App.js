@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import axios from "axios";
 import PostCard from './components/PostCard/PostCard';
 import PostService from './services/postService';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
+import Posts from './pages/Posts/Posts';
 function App() {
   // Backend bağlantısı - http isteği
   // bağlantı sonucu gelen değeri ekranda göstermek
@@ -22,8 +24,7 @@ function App() {
     //   .finally(() => { console.log("async işlem bitti") });
 
     try {
-      let postService = new PostService();
-      let response = await postService.getAll();
+      let response = await PostService.getAll();
       setPosts(response.data);
     } catch (e) {
       console.log(e);
@@ -36,10 +37,12 @@ function App() {
   }
 
   return (
-    <div className="App" >
-      {/* Parent-Child */}
-      {posts.map((post) => <PostCard onDelete={removePost} post={post} />)}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/posts" element={<Posts />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
