@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import axios from "axios";
 import PostCard from './components/PostCard/PostCard';
+import PostService from './services/postService';
 function App() {
   // Backend bağlantısı - http isteği
   // bağlantı sonucu gelen değeri ekranda göstermek
@@ -21,8 +22,9 @@ function App() {
     //   .finally(() => { console.log("async işlem bitti") });
 
     try {
-      let response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(response.data)
+      let postService = new PostService();
+      let response = await postService.getAll();
+      setPosts(response.data);
     } catch (e) {
       console.log(e);
     }
