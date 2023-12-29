@@ -7,9 +7,9 @@ import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/authContext';
 import { Provider } from "react-redux";
-import { createStore } from './store/configureStore';
+import { configureStore } from './store/configureStore';
 
-const store = createStore();
+const store = configureStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
