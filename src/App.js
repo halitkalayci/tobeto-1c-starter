@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage/Homepage';
 import Posts from './pages/Posts/Posts';
 import NotFound from './pages/NotFound/NotFound';
 import Navbar from './components/Navbar/Navbar';
+import Login from './pages/Login/Login';
 function App() {
   // Backend bağlantısı - http isteği
   // bağlantı sonucu gelen değeri ekranda göstermek
@@ -46,6 +47,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
