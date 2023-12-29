@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 import {Button} from "semantic-ui-react";
-import {AuthContext} from "../../contexts/authContext";
+import {useAuth} from "../../contexts/authContext";
 function Login() {
-	const authContext = useContext(AuthContext);
+	const authContext = useAuth();
 
 	return (
 		<div>

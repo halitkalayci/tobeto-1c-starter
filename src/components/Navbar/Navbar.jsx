@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
 import {Menu} from "semantic-ui-react";
 import {Link, useNavigate} from "react-router-dom";
-import {AuthContext} from "../../contexts/authContext";
+import {useAuth} from "../../contexts/authContext";
 
 function Navbar() {
 	//const navigate = useNavigate();
-	const authContext = useContext(AuthContext);
+	const authContext = useAuth();
 
 	return (
 		<Menu>
