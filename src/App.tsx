@@ -8,11 +8,12 @@ import Posts from "./pages/Posts/Posts";
 import NotFound from "./pages/NotFound/NotFound";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/Login/Login";
+import {Post} from "./models/post";
 function App() {
 	// Backend bağlantısı - http isteği
 	// bağlantı sonucu gelen değeri ekranda göstermek
 	// componentler arası veri iletişimi
-	const [posts, setPosts] = useState<any>([]);
+	const [posts, setPosts] = useState<Post[]>([]);
 
 	useEffect(() => {
 		fetchItems();
