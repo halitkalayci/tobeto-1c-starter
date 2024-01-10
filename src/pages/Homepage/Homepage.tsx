@@ -1,6 +1,10 @@
 import React from "react";
+import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 function Homepage() {
+	const cartState = useSelector((state: any) => state.cart);
+	console.log(cartState);
+
 	return (
 		<div>
 			<br />
