@@ -5,7 +5,7 @@ const cartSlice = createSlice({
 	initialState: {cartItems: [] as any[]},
 	reducers: {
 		addToCart: (state, action) => {
-			// Immer
+			// aynı üründen 2. kez eklendiğinde listeye eklenmesi yerine adedinin artırılması..
 			state.cartItems.push(action.payload);
 		},
 		removeFromCart: (state, action) => {
