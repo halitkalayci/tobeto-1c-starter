@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import postService from "../../services/postService";
 
 const cartSlice = createSlice({
 	name: "cart",
