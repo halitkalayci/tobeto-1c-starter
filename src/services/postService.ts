@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from "axios";
+import {AxiosResponse} from "axios";
 import {Post} from "../models/post";
 import axiosInstance from "../utils/axiosInterceptors";
 
