@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import "./App.css";
-import PostCard from "./components/PostCard/PostCard";
 import PostService from "./services/postService";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
