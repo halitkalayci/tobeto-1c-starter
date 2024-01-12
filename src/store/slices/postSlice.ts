@@ -4,12 +4,18 @@ import {Post} from "../../models/post";
 
 export const getAllPosts = createAsyncThunk<Post[]>(
 	"post/getAllPosts",
-	async () => {
+	async (thunkArg, thunkAPI) => {
+		const state: any = thunkAPI.getState();
+
+		if (state.post.posts.length > 0) {
+			return thunkAPI.fulfillWithValue(state.post.posts);
+		}
+
 		try {
 			const response = await postService.getAll();
-			return response.data;
+			return thunkAPI.fulfillWithValue(response.data);
 		} catch (e: any) {
-			return Promise.reject(e);
+			return thunkAPI.rejectWithValue("Hata mesajı");
 		}
 	},
 );
